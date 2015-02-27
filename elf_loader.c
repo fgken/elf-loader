@@ -10,6 +10,7 @@ typedef unsigned long	size_t;
 #include "elf_common.h"
 #include "elf64.h"
 
+
 extern char _binary_elfimage_start[];
 extern char _binary_elfimage_end[];
 extern char _binary_elfimage_size[];
@@ -82,11 +83,14 @@ int load_elf(const void *elf_image, void **entry_point)
 	return 0;
 }
 
-int main()
+extern unsigned char *program;
+
+void main()
 {
 	void *entry;
 
-	load_elf((void *)_binary_elfimage_start, &entry);
+	//load_elf((void *)_binary_elfimage_start, &entry);
+	load_elf(program, &entry);
 
 	goto *entry;
 }
