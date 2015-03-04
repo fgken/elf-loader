@@ -1,7 +1,7 @@
 OUTPUT_FORMAT("elf64-tradbigmips", "elf64-tradbigmips",
 	      "elf64-tradlittlemips")
 OUTPUT_ARCH(mips)
-/*ENTRY(__start)*/
+ENTRY(__start)
 SECTIONS
 {
   /* Read-only sections, merged into text segment: */
@@ -40,5 +40,4 @@ SECTIONS
   }
 
   . = DATA_SEGMENT_END (.);
-  PROVIDE (__executable_end = .);
 }

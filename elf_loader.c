@@ -15,22 +15,14 @@ extern char _binary_elfimage_start[];
 extern char _binary_elfimage_end[];
 extern char _binary_elfimage_size[];
 
-extern unsigned char *program;
-
-extern void *__executable_end;
-
 int load_elf(const void *elf_image, void **entry_point);
 
 void main()
 {
 	void *entry;
 
-	void *aaa;
-	aaa = __executable_end;
-	aaa++;
-
 	//load_elf((void *)_binary_elfimage_start, &entry);
-	load_elf(__executable_end, &entry);
+	load_elf((void *)0x81010310, &entry);
 
 	goto *entry;
 }
