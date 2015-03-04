@@ -21,8 +21,7 @@ void main()
 {
 	void *entry;
 
-	//load_elf((void *)_binary_elfimage_start, &entry);
-	load_elf((void *)0x81010310, &entry);
+	load_elf((void *)_binary_elfimage_start, &entry);
 
 	goto *entry;
 }
