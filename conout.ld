@@ -5,8 +5,8 @@ ENTRY(__start)
 SECTIONS
 {
   /* Read-only sections, merged into text segment: */
-  PROVIDE (__executable_start = SEGMENT_START("text-segment", 0x8000000081000000));
-  . = SEGMENT_START("text-segment", 0x8000000081000000);
+  PROVIDE (__executable_start = SEGMENT_START("text-segment", 0x8000000082000000));
+  . = SEGMENT_START("text-segment", 0x8000000082000000);
   .text           :
   {
     *(.text)
